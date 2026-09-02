@@ -134,11 +134,14 @@ Thank you!`;
 
   return (
     <main className="min-h-screen bg-gray-50 text-gray-900">
+      {/* Header */}
       <header className="sticky top-0 z-50 border-b bg-white">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4">
           <div>
             <h1 className="text-2xl font-bold">SVSTOREAE</h1>
-            <p className="text-xs text-gray-500">Beauty & Cosmetics</p>
+            <p className="text-xs text-gray-500">
+              Beauty & Cosmetics | UAE
+            </p>
           </div>
 
           <button
@@ -150,15 +153,57 @@ Thank you!`;
         </div>
       </header>
 
-      <section className="bg-black px-5 py-14 text-center text-white">
-        <h2 className="text-4xl font-bold">Welcome to SVSTOREAE</h2>
-        <p className="mx-auto mt-3 max-w-xl text-gray-300">
-          Discover quality beauty and cosmetic products at great prices.
+      {/* Hero */}
+      <section className="bg-black px-5 py-16 text-center text-white">
+        <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-gray-400">
+          SVSTOREAE
+        </p>
+
+        <h2 className="text-4xl font-bold sm:text-5xl">
+          Online Shopping in UAE
+        </h2>
+
+        <p className="mx-auto mt-4 max-w-2xl text-gray-300">
+          Shop beauty, cosmetics and quality products online in the UAE.
+          Discover premium products at great prices with easy WhatsApp
+          ordering.
+        </p>
+
+        <button
+          onClick={() =>
+            document
+              .getElementById("products")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+          className="mt-7 rounded-xl bg-white px-6 py-3 font-semibold text-black"
+        >
+          Shop Now
+        </button>
+      </section>
+
+      {/* SEO Content */}
+      <section className="mx-auto max-w-6xl px-5 py-10 text-center">
+        <h2 className="text-2xl font-bold">
+          Beauty & Cosmetics Online Store in UAE
+        </h2>
+
+        <p className="mx-auto mt-3 max-w-3xl text-sm leading-6 text-gray-600">
+          SVSTOREAE is an online shopping store in the UAE offering beauty,
+          cosmetics and skincare products. Explore our collection and order
+          your favorite products easily through WhatsApp.
         </p>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-10">
-        <h2 className="mb-6 text-2xl font-bold">Our Products</h2>
+      {/* Products */}
+      <section
+        id="products"
+        className="mx-auto max-w-6xl px-5 py-10"
+      >
+        <h2 className="mb-2 text-2xl font-bold">Our Products</h2>
+
+        <p className="mb-6 text-sm text-gray-500">
+          Shop our beauty and cosmetic collection.
+        </p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {products.map((product) => (
@@ -168,7 +213,7 @@ Thank you!`;
             >
               <img
                 src={product.image}
-                alt={product.name}
+                alt={`${product.name} - SVSTOREAE UAE`}
                 className="h-64 w-full object-cover"
               />
 
@@ -197,6 +242,42 @@ Thank you!`;
         </div>
       </section>
 
+      {/* Why SVSTOREAE */}
+      <section className="mx-auto max-w-6xl px-5 py-10">
+        <div className="rounded-2xl bg-white p-6 text-center ring-1 ring-gray-200">
+          <h2 className="text-2xl font-bold">
+            Why Shop With SVSTOREAE?
+          </h2>
+
+          <div className="mt-6 grid gap-5 sm:grid-cols-3">
+            <div>
+              <div className="text-3xl">✨</div>
+              <h3 className="mt-2 font-bold">Quality Products</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                Carefully selected beauty and cosmetic products.
+              </p>
+            </div>
+
+            <div>
+              <div className="text-3xl">🛍️</div>
+              <h3 className="mt-2 font-bold">Easy Shopping</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                Browse products and add them to your cart easily.
+              </p>
+            </div>
+
+            <div>
+              <div className="text-3xl">📱</div>
+              <h3 className="mt-2 font-bold">WhatsApp Ordering</h3>
+              <p className="mt-1 text-sm text-gray-500">
+                Place your order quickly through WhatsApp.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Cart */}
       {showCart && (
         <div className="fixed inset-0 z-50 bg-black/50">
           <div className="absolute right-0 top-0 h-full w-full max-w-md overflow-y-auto bg-white p-6">
@@ -219,10 +300,16 @@ Thank you!`;
               <>
                 <div className="mt-6 space-y-4">
                   {cart.map((item) => (
-                    <div key={item.id} className="rounded-xl border p-4">
+                    <div
+                      key={item.id}
+                      className="rounded-xl border p-4"
+                    >
                       <div className="flex justify-between gap-4">
                         <div>
-                          <h3 className="font-semibold">{item.name}</h3>
+                          <h3 className="font-semibold">
+                            {item.name}
+                          </h3>
+
                           <p className="text-sm text-gray-500">
                             AED {item.price} × {item.quantity}
                           </p>
@@ -276,11 +363,14 @@ Thank you!`;
         </div>
       )}
 
+      {/* Checkout */}
       {showCheckout && (
         <div className="fixed inset-0 z-50 overflow-y-auto bg-black/50 p-5">
           <div className="mx-auto mt-10 max-w-lg rounded-2xl bg-white p-6">
             <div className="flex items-center justify-between">
-              <h2 className="text-2xl font-bold">Customer Details</h2>
+              <h2 className="text-2xl font-bold">
+                Customer Details
+              </h2>
 
               <button
                 onClick={() => setShowCheckout(false)}
@@ -300,7 +390,10 @@ Thank you!`;
                 placeholder="Full Name *"
                 value={customer.name}
                 onChange={(e) =>
-                  setCustomer({ ...customer, name: e.target.value })
+                  setCustomer({
+                    ...customer,
+                    name: e.target.value,
+                  })
                 }
                 className="w-full rounded-xl border px-4 py-3 outline-none"
               />
@@ -310,7 +403,10 @@ Thank you!`;
                 placeholder="Contact Number *"
                 value={customer.contact}
                 onChange={(e) =>
-                  setCustomer({ ...customer, contact: e.target.value })
+                  setCustomer({
+                    ...customer,
+                    contact: e.target.value,
+                  })
                 }
                 className="w-full rounded-xl border px-4 py-3 outline-none"
               />
@@ -319,7 +415,10 @@ Thank you!`;
                 placeholder="Location / Address *"
                 value={customer.location}
                 onChange={(e) =>
-                  setCustomer({ ...customer, location: e.target.value })
+                  setCustomer({
+                    ...customer,
+                    location: e.target.value,
+                  })
                 }
                 rows={3}
                 className="w-full rounded-xl border px-4 py-3 outline-none"
@@ -329,7 +428,10 @@ Thank you!`;
                 placeholder="Extra details / Note (optional)"
                 value={customer.note}
                 onChange={(e) =>
-                  setCustomer({ ...customer, note: e.target.value })
+                  setCustomer({
+                    ...customer,
+                    note: e.target.value,
+                  })
                 }
                 rows={3}
                 className="w-full rounded-xl border px-4 py-3 outline-none"
@@ -352,6 +454,19 @@ Thank you!`;
           </div>
         </div>
       )}
+
+      {/* Footer */}
+      <footer className="mt-10 bg-black px-5 py-8 text-center text-white">
+        <h2 className="text-xl font-bold">SVSTOREAE</h2>
+
+        <p className="mt-2 text-sm text-gray-400">
+          Beauty & Cosmetics Online Store in UAE
+        </p>
+
+        <p className="mt-4 text-xs text-gray-500">
+          © 2026 SVSTOREAE. All rights reserved.
+        </p>
+      </footer>
     </main>
   );
 }
