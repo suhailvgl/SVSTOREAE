@@ -13,12 +13,12 @@ const geistSans = Geist({
         });
 
         export const metadata: Metadata = {
-          title: "SVSTOREAE | Online Shopping",
-            description: "Shop premium beauty and cosmetic products from SVSTOREAE.",
-              verification: {
-                  google: "blgVF30fB6vtmzfvyCe5i_1bOJDt88FnLCNHQV3mLk8",
-                    },
-                    };
+        title: "SVSTOREAE | Online Shopping in UAE",
+description:
+  "Shop beauty, cosmetics and trending products online in the UAE with SVSTOREAE.",
+verification: {
+  google: "blgVF30fB6vtmzfvyCe5i_1bOJDt88FnLCNHQV3mLk8",
+},
 
                     export default function RootLayout({
                       children,
